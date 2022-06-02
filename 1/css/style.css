@@ -1,0 +1,15 @@
+#first {
+    color: rgb(58, 206, 47);
+    background: black;
+
+    padding: 0 10px 10px 10px;
+    margin: 10px 0 0 50px;
+}
+
+.second {
+    color: red;
+}
+
+button {
+
+}
