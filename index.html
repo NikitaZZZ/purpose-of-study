@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>УЧИМСЯ С НИКИТОЙ</title>
+    <style>
+        #purposes {
+            width: 900px;
+            margin: auto;
+        }
+
+        #purposes .list-group .list-group-item { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">УЧЕБА ВМЕСТЕ С НИКИТОЙ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-nav" aria-controls="mob-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mob-nav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Цели</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2 class="text-center mt-2">Часть 1: JS как ЯП</h2>
+    <div class="card mt-3" id="purposes">
+        <ul class="list-group">
+            <li class="list-group-item" id="intro-title" onclick="open_lesson('star-intro-quality-lesson-btn', 'star-intro-clear-lesson-btn')" data-bs-toggle="modal" data-bs-target="#introductory-lesson">Вводный: Что такое HTML и CSS? Немного основ HTML, CSS.</li>
+            <li class="list-group-item" id="whatjs-title" onclick="open_lesson('star-whatjs-quality-lesson-btn', 'star-whatjs-clear-lesson-btn')" data-bs-toggle="modal" data-bs-target="#what-is-js-lesson">Что такое JS? Вывод данных (alert, prompt, confirm, строки, числа (+операции c ними (мат. с числами и соединения строк))), переменные (имя, типы, (var, let, const), (вывод переменных, шаблонные строки), операторы сравнения)</li>
+            <li class="list-group-item" id="conditional-title" onclick="open_lesson('star-conditional-quality-lesson-btn', 'star-conditional-clear-lesson-btn')" data-bs-toggle="modal" data-bs-target="#conditional-branches-lesson">Условные ветвления: if/else if/else, '?', switch/case. Логические операторы</li>
+            <li class="list-group-item" id="arrays-title" onclick="open_lesson('star-arrays-cycles-quality-lesson-btn', 'star-arrays-cycles-clear-lesson-btn')" data-bs-toggle="modal" data-bs-target="#arrays-cycles-lesson">Массивы и их методы. Циклы: while (do while), for (foreach). Операторы break, continue</li>
+            <li class="list-group-item" id="functions-title" onclick="open_lesson('star-functions-objects-quality-lesson-btn', 'star-functions-objects-clear-lesson-btn')" data-bs-toggle="modal" data-bs-target="#functions-objects-lesson">Функции (+аргументы). Объекты.</li>
+        </ul>
+    </div>
+
+    <h2 class="text-center mt-3">Часть 2: JS для браузера</h2>
+    <div class="card mt-3" id="purposes">
+        <ul class="list-group">
+            <li class="list-group-item">DOM-дерево и взаимодействие с ним (1): getElement*, querySelector*, *.style.*, *.className.*, *.id.*</li>
+            <li class="list-group-item">DOM-дерево и взаимодействие с ним (2): Браузерные события. События мыши, клавиатуры. (Бонус: drag'n'drop)</li>
+            <li class="list-group-item">Локальное хранилище: LocalStorage</li>
+        </ul>
+    </div>
+
+    <h2 class="text-center mt-3">Часть 3: Практика</h2>
+    <div class="card mt-3" id="purposes">
+        <ul class="list-group">
+            <li class="list-group-item">Проект: ???</li>
+            <li class="list-group-item">Проект: ???</li>
+            <li class="list-group-item">Проект: ???</li>
+        </ul>
+    </div>
+
+    <div class="modal fade" id="introductory-lesson" tabindex="-1" aria-labelledby="introductory-lesson" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Вводный: Что такое HTML и CSS? Немного основ HTML, CSS.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <li class="list-group-item mb-3">
+                        <h5>Полезные ссылки</h5>
+                        <ol>
+                            <a class="d-block" target="_blank" href="https://html5css.ru/tags/default.php">Справочник HTML</a>
+                            <a class="d-block" target="_blank" href="https://html5css.ru/cssref/default.php">Справочник CSS</a>
+                            <a class="d-block" target="_blank" href="https://bootstrap-4.ru/">Bootstrap (Готовые стили)</a>
+                        </ol>
+                    </li>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Качество урока
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-intro-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-intro-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-intro-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-intro-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-intro-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">Все ли понятно?
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-intro-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-intro-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-intro-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-intro-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-intro-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-success" id="save-intro-lesson-btn" onclick="backlight('intro-title')">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="what-is-js-lesson" tabindex="-1" aria-labelledby="introductory-lesson" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Что такое JS? Вывод данных (alert, prompt, confirm, строки, числа (+операции c ними (мат. с числами и соединения строк))), переменные (имя, типы, (var, let, const), (вывод переменных, шаблонные строки), операторы сравнения)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Качество урока
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-whatjs-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-whatjs-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-whatjs-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-whatjs-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-whatjs-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">Все ли понятно?
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-whatjs-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-whatjs-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-whatjs-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-whatjs-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-whatjs-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-success" onclick="backlight('whatjs-title')">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="conditional-branches-lesson" tabindex="-1" aria-labelledby="introductory-lesson" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Условные ветвления: if/else if/else, '?', switch/case. Логические операторы</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <li class="list-group-item mb-3">
+                        <h5>Задача: написать программу по условию анекдота</h5>
+                        
+                        <p>Жена посылает мужа программиста в магазин. <br />
+                            - Дорогой, купи палку колбасы, а если будут яйца и не будет рыбы, 
+                                то возьми десяток, иначе если будут яйца и их количество 
+                                будет больше количества булочек с джемом хотя бы в 3 раза или будет свежий хлеб, 
+                                то возьми два десятка. Иначе если будет рыба и будет хлеб, и не будет чая, то возьми три десятка. <br />
+                        
+                            - ???
+                        </p>
+
+                        <small class="text-muted">Концовку расскажу после написания программы</small>
+
+                    </li>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Качество урока
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-conditional-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-conditional-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-conditional-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-conditional-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-conditional-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">Все ли понятно?
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-conditional-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-conditional-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-conditional-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-conditional-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-conditional-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-success" onclick="backlight('conditional-title')">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="arrays-cycles-lesson" tabindex="-1" aria-labelledby="introductory-lesson" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Массивы и их методы. Циклы: while (do while), for (foreach). Операторы break, continue</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <li class="list-group-item mb-3">
+                        <h5>Задача: написать программу "1000-7?"</h5>
+                    </li>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Качество урока
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-arrays-cycles-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-arrays-cycles-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-arrays-cycles-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-arrays-cycles-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-arrays-cycles-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">Все ли понятно?
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-arrays-cycles-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-arrays-cycles-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-arrays-cycles-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-arrays-cycles-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-arrays-cycles-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-success" onclick="backlight('arrays-title')">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="functions-objects-lesson" tabindex="-1" aria-labelledby="introductory-lesson" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Функции (+аргументы). Объекты.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Качество урока
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-functions-objects-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-functions-objects-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-functions-objects-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-functions-objects-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-functions-objects-quality-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">Все ли понятно?
+                            <div class="d-grid gap-2 d-md-block mt-2">
+                                <button class="btn btn-outline-warning" value="1" id="star-functions-objects-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="2" id="star-functions-objects-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="3" id="star-functions-objects-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="4" id="star-functions-objects-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                                <button class="btn btn-outline-warning" value="5" id="star-functions-objects-clear-lesson-btn"><i class="fas fa-star"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-success" onclick="backlight('functions-title')">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/373834e38f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        const lessons = ['intro-title', 'whatjs-title', 
+                'conditional-title', 'arrays-title', 'function-title'];
+
+        window.onload = () => { 
+            for (const lesson of lessons) { 
+                try {
+                    if (localStorage.getItem(lesson))
+                        document.querySelector(`#${lesson}`).className = "list-group-item bg-success text-white";
+                } catch { console.log(`No pass lesson ${lesson}`); }
+            }
+        }
+
+        function open_lesson(starQuality, starClear) {
+            let starQualityBtns = document.querySelectorAll(`#${starQuality}`);
+            let starClearBtns = document.querySelectorAll(`#${starClear}`);
+            
+            starQualityBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    grading(starQualityBtns, this);
+                });
+            });
+
+            starClearBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    grading(starClearBtns, this);
+                });
+            });
+
+            getSavesStars(starQualityBtns[0].id, starClearBtns[0].id);
+        }
+
+        function grading(allBtns, thisBtn) {
+            allBtns.forEach(btn => { btn.value <= thisBtn.value ? 
+                                btn.className = "btn btn-warning" : 
+                                btn.className = "btn btn-outline-warning" });
+
+            saveStars(thisBtn.id, thisBtn.value);
+        }
+
+        function backlight(elem) {
+            Swal.fire({
+                title: 'Предупреждение!',
+                icon: 'warning',
+                text: 'При выходе отсюда, урок будет помечен как "Пройден", если вы еще не прошли урок, нажмите на кнопку "Отмена"',
+                showCancelButton: true,
+                cancelButtonText: 'Отмена'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(elem).className = "list-group-item bg-success text-white";
+                    localStorage.setItem(elem, 'true');
+                }
+            })
+        }
+
+        function saveStars(lesson, value) { localStorage.setItem(`${lesson}`, value); }
+        
+        function getSavesStars(starQuality, starClear) { 
+            const stars_clear_lc = parseInt(localStorage.getItem(starClear));
+            const stars_quality_lc = parseInt(localStorage.getItem(starQuality));
+
+            const btnsClear = document.querySelectorAll(`#${starClear}`);
+            const btnsQuality = document.querySelectorAll(`#${starQuality}`);
+
+            for (let i = 0; i < stars_clear_lc; i++) 
+                btnsClear[i].className = "btn btn-warning";
+
+            for (let i = 0; i < stars_quality_lc; i++)
+                btnsQuality[i].className = "btn btn-warning";
+        }
+    </script>
+</body>
+</html>
